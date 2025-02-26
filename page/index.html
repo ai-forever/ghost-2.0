@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Kandinsky 4.0 is a text-to-video generation model based on latent diffusion for 480p and HD resolutions.">
+  <meta name="keywords" content="Text-to-Video, Image-to-Video, Kandinsky 4.0, Kandinsky Video">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOST 2.0</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/video-camera.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GHOST 2.0: <u>G</u>enerative <u>H</u>igh-fidelity <u>O</u>ne <u>S</u>hot  <u>T</u>ransfer of Heads</h1>
+             <div class="is-size-5 publication-authors">
+              <span class="author-block">Alexander Groshev,&nbsp;Anastasiia Iashchenko,&nbsp;Pavel Paramonov,&nbsp;Denis Dimitrov,&nbsp;Andrey Kuznetsov&nbsp;</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Sber AI,&nbsp;AIRI&nbsp;&nbsp;</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv Link. -->
+                <span class="link-block">
+                  <a href=" " class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (soon)</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/anastasia-yaschenko/GHOST-2.0"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Generate Link. -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/spaces/ai-forever/GHOST-2.0"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <img src="static/images/icons8-brush-100.png"></img>
+                    </span>
+                    <span>Generate</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <div class="container">
+            <table class="center">
+              <tbody>
+                <img src="./static/images/examples_main.jpg" class="center"/>
+                  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              While the task of face swapping has recently gained attention in the research community, a related problem of head swapping remains largely unexplored. In addition to skin color transfer, head swap poses extra challenges, such as the need to preserve structural information of the whole head during synthesis and inpaint gaps between swapped head and background. In this paper, we address these concerns with GHOST 2.0, which consists of two problem-specific modules. First, we introduce enhanced Aligner model for head reenactment, which preserves identity information at multiple scales and is robust to extreme pose variations. Secondly, we use a Blender module that seamlessly integrates the reenacted head into the target background by transferring skin color and inpainting mismatched regions. Both modules outperform the baselines on the corresponding tasks, allowing to achieve state-of-the-art results in head swapping. We also tackle complex cases, such as large difference in hair styles of source and target.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Overall Pipeline</h2>
+          <img src="./static/images/pipeline fig.drawio.png" class="interpolation-image"
+              alt="Interpolate start reference image." />
+          <div class="content has-text-justified">
+            <p>
+              Out model pipeline include following parts:
+              <ol>
+                <li> <b>Aligner.</b> To perform cross-reenactment by transfering target motion to source head, we have implemented new state-of-the-art level head reenactment model.</li>
+                <li> <b>Blender.</b> To blend reenacted head into target portrait, we have implemented Blender module similar to one implemented in <b><a href="https://arxiv.org/abs/2204.13100">HeSer-like</a></b> with usage of <b><a href="https://github.com/advimman/lama">LaMa</a></b></li>
+                <li> <b> Post-processing blending.</b> To remove excess hair from image in the case of its extension beyond the boundaries of target crop, we optionally apply <b><a href="https://github.com/ai-forever/Kandinsky-2">Kandinsky</a></b> inpainting model to inpainting region.</li>
+              </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+
+  
+
+  <hr>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>To be added</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
