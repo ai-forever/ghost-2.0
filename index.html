@@ -57,11 +57,11 @@
               <div class="publication-links">
                 <!-- Arxiv Link. -->
                 <span class="link-block">
-                  <a href=" " class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2502.18417" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv (soon)</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
                 <!-- Code Link. -->
@@ -130,14 +130,14 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">Overall Pipeline</h2>
-          <img src="./static/images/pipeline fig.drawio.png" class="interpolation-image"
+          <img src="./static/images/pipeline fig.drawio.png" class="interpolation-image2"
               alt="Interpolate start reference image." />
           <div class="content has-text-justified">
             <p>
-              Out model pipeline include following parts:
+              Our model pipeline include following parts:
               <ol>
                 <li> <b>Aligner.</b> To perform cross-reenactment by transfering target motion to source head, we have implemented new state-of-the-art level head reenactment model.</li>
-                <li> <b>Blender.</b> To blend reenacted head into target portrait, we have implemented Blender module similar to one implemented in <b><a href="https://arxiv.org/abs/2204.13100">HeSer-like</a></b> with usage of <b><a href="https://github.com/advimman/lama">LaMa</a></b></li>
+                <li> <b>Blender.</b> To blend reenacted head into target portrait, we have implemented Blender module similar to one implemented in <b><a href="https://arxiv.org/abs/2204.13100">HeSer-like</a></b> with usage of <b><a href="https://github.com/advimman/lama">LaMa</a></b>.</li>
                 <li> <b> Post-processing blending.</b> To remove excess hair from image in the case of its extension beyond the boundaries of target crop, we optionally apply <b><a href="https://github.com/ai-forever/Kandinsky-2">Kandinsky</a></b> inpainting model to inpainting region.</li>
               </ol>
             </p>
@@ -152,7 +152,15 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>To be added</code></pre>
+      <pre><code>@misc{groshev2025ghost2
+      title={GHOST 2.0: generative high-fidelity one shot transfer of heads}, 
+      author={Alexander Groshev and Anastasiia Iashchenko and Pavel Paramonov and Denis Dimitrov and Andrey Kuznetsov},
+      year={2025},
+      eprint={2502.18417},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2502.18417}, 
+}</code></pre>
     </div>
   </section>
 
